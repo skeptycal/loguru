@@ -195,25 +195,25 @@ class Core:
 class Logger:
     """An object to dispatch logging messages to configured handlers.
 
-    The |Logger| is the core object of ``loguru``, every logging configuration and usage pass
-    through a call to one of its methods. There is only one logger, so there is no need to retrieve
-    one before usage.
+        The |Logger| is the core object of ``loguru``, every logging configuration and usage pass
+        through a call to one of its methods. There is only one logger, so there is no need to retrieve
+        one before usage.
 
-    Once the ``logger`` is imported, it can be used to write messages about events happening in your
-    code. By reading the output logs of your application, you gain a better understanding of the
-    flow of your program and you more easily track and debug unexpected behaviors.
+        Once the ``logger`` is imported, it can be used to write messages about events happening in your
+        code. By reading the output logs of your application, you gain a better understanding of the
+        flow of your program and you more easily track and debug unexpected behaviors.
 
-    Handlers to which the logger sends log messages are added using the |add| method. Note that you
-    can use the |Logger| right after import as it comes pre-configured (logs are emitted to
-    |sys.stderr| by default). Messages can be logged with different severity levels and using braces
-    attributes like the |str.format| method do.
+        Handlers to which the logger sends log messages are added using the |add| method. Note that you
+        can use the |Logger| right after import as it comes pre-configured (logs are emitted to
+        |sys.stderr| by default). Messages can be logged with different severity levels and using braces
+        attributes like the |str.format| method do.
 
-    When a message is logged, a "record" is associated with it. This record is a dict which contains
-    information about the logging context: time, function, file, line, thread, level... It also
-    contains the ``__name__`` of the module, this is why you don't need named loggers.
+        When a message is logged, a "record" is associated with it. This record is a dict which contains
+        information about the logging context: time, function, file, line, thread, level... It also
+        contains the ``__name__`` of the module, this is why you don't need named loggers.
 
-    You should not instantiate a |Logger| by yourself, use ``from loguru import logger`` instead.
-    """
+        You should not instantiate a |Logger| by yourself, use ``from loguru import logger`` instead.
+        """
 
     def __init__(self, core, exception, depth, record, lazy, colors, raw, capture, patcher, extra):
         self._core = core
